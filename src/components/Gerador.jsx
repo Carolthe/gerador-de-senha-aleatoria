@@ -4,7 +4,12 @@ export default function Gerador (){
     const [gerar, setGerar] = useState("")
 
     function gerarSenhas(){
-        setGerar("teste")
+        const caracteres = "QWERTYUIOPASDFGHJKLÇZXCVBNM!#$%&?@"
+        let newPaddword = ""
+        for (let i = 0; i< 12; i++){
+            newPaddword += caracteres.charAt(Math.floor(Math.random() * caracteres.length))
+        }
+        setGerar(newPaddword)
     }
     function apagarSenha (){
         setGerar("")
